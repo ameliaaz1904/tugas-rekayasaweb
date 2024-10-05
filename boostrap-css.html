@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Movie Store - Netflix Style</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #141414; /* Background Netflix style */
+      color: #fff; /* Text color white */
+    }
+    .navbar {
+      background-color: #141414; /* Black navbar */
+    }
+    .navbar-brand {
+      font-weight: bold;
+      color: #e50914; /* Netflix Red */
+    }
+    .navbar-toggler {
+      border-color: #fff;
+    }
+    .hero-section {
+      background-color: #141414;
+      padding: 50px 0;
+      text-align: center;
+      color: white;
+    }
+    .hero-section h1, .hero-section p {
+      color: #fff;
+    }
+    .gallery-item {
+      position: relative;
+    }
+    .gallery-item img {
+      border-radius: 10px;
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+    }
+    .movie-info {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(0, 0, 0, 0.7); /* Transparent black background */
+      padding: 10px;
+      text-align: center;
+      border-radius: 0 0 10px 10px;
+    }
+    .movie-info h5 {
+      font-size: 1.2rem;
+      margin: 0;
+      color: #fff;
+    }
+    .rating {
+      color: #ffcc00;
+      font-size: 1.2rem;
+    }
+    .buy-button {
+      background-color: #e50914;
+      color: white;
+      padding: 5px 15px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+    .buy-button:hover {
+      background-color: #ff4d4d;
+    }
+    .gallery-item:hover img {
+      filter: brightness(70%);
+      transition: 0.3s ease-in-out;
+    }
+    .gallery-item:hover .movie-info {
+      background: rgba(0, 0, 0, 0.9);
+    }
+    .footer {
+      background-color: #141414;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Movie Store</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Movies</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<div class="container-fluid hero-section">
+  <h1>Discover the Best Movies for You</h1>
+  <p>Watch, rate, and enjoy our latest collection of top-rated films!</p>
+</div>
+
+<!-- Gallery Section -->
+<div class="container py-5">
+  <div class="row">
+    <div class="col-lg-4 col-md-6 col-sm-12 gallery-item">
+      <img src="dino.jpeg" class="img-fluid" alt="Movie 1">
+      <div class="movie-info">
+        <h5>Movie Title 1</h5>
+        <p class="rating">⭐⭐⭐⭐☆</p>
+        <p>$12.99</p>
+        <button class="buy-button" onclick="buyNow('Movie Title 1', 12.99)">Buy Now</button>
+      </div>
+    </div>
+    <div class="col-lg-4 col-md-6 col-sm-12 gallery-item">
+      <img src="laskarpelangi.jpeg" class="img-fluid" alt="Movie 2">
+      <div class="movie-info">
+        <h5>Laskar Pelangi</h5>
+        <p class="rating">⭐⭐⭐⭐⭐</p>
+        <p>$14.99</p>
+        <button class="buy-button" onclick="buyNow('Laskar Pelangi', 14.99)">Buy Now</button>
+      </div>
+    </div>
+    <div class="col-lg-4 col-md-6 col-sm-12 gallery-item">
+      <img src="baymax.jpeg" class="img-fluid" alt="Movie 3">
+      <div class="movie-info">
+        <h5>Big Hero 6</h5>
+        <p class="rating">⭐⭐⭐☆☆</p>
+        <p>$9.99</p>
+        <button class="buy-button" onclick="buyNow('Big Hero 6', 9.99)">Buy Now</button>
+      </div>
+    </div>
+    <div class="col-lg-4 col-md-6 col-sm-12 gallery-item">
+      <img src="findingnemo.jpeg" class="img-fluid" alt="Movie 4">
+      <div class="movie-info">
+        <h5>Finding Nemo</h5>
+        <p class="rating">⭐⭐⭐⭐☆</p>
+        <p>$12.99</p>
+        <button class="buy-button" onclick="buyNow('Finding Nemo', 12.99)">Buy Now</button>
+      </div>
+    </div>
+    <div class="col-lg-4 col-md-6 col-sm-12 gallery-item">
+      <img src="patrick.jpeg" class="img-fluid" alt="Movie 5">
+      <div class="movie-info">
+        <h5>Spongebob Squarepants</h5>
+        <p class="rating">⭐⭐⭐⭐⭐</p>
+        <p>$14.99</p>
+        <button class="buy-button" onclick="buyNow('Spongebob Squarepants', 14.99)">Buy Now</button>
+      </div>
+    </div>
+    <div class="col-lg-4 col-md-6 col-sm-12 gallery-item">
+      <img src="wreckitralph.jpeg" class="img-fluid" alt="Movie 6">
+      <div class="movie-info">
+        <h5>Wreckit Ralph</h5>
+        <p class="rating">⭐⭐⭐⭐☆</p>
+        <p>$11.99</p>
+        <button class="buy-button" onclick="buyNow('Wreckit Ralph', 11.99)">Buy Now</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="footer">
+  <p>Contact us: info@moviestore.com | Phone: +62 823 7545 342</p>
+</footer>
+
+<script>
+  function buyNow(movieTitle, price) {
+    alert('You have selected ' + movieTitle + '. Price: $' + price);
+    // Here, you can add further logic to process the purchase, such as redirecting to a payment page or adding the movie to a cart
+  }
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
